@@ -1,0 +1,986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>PASCAL-Part Dataset</title>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style>
+/* http://stackoverflow.com/questions/18325779/bootstrap-3-collapse-show-state-with-chevron-icon */
+.panel-heading .accordion-toggle:before {
+	font-family: 'Glyphicons Halflings';
+	content: "\e114";
+	float: left;
+	color: grey;
+	padding-right: 6px;
+}
+.panel-heading .accordion-toggle.collapsed:before {
+	content: "\e080";
+}
+</style>
+  </head>
+
+  <body>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+    <ul class="nav navbar-nav">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#statistics">Statistics</a></li>
+        <li><a href="#considerations">Usage Considerations</a></li>
+        <li><a href="#citation">Citation</a></li>
+        <li><a href="#acknowledgements">Acknowledgements</a></li>
+      </ul>
+  </div>
+  </nav>
+<div class="container"> <a name="introduction"></a>
+    <div class="page-header">
+    <h1 id="pascal-context-dataset">PASCAL-Part Dataset</h1>
+  </div>
+    <p>This dataset is a set of additional annotations for PASCAL VOC 2010. It goes beyond the original PASCAL object detection task by providing segmentation masks for each body part of the object. For categories that do not have a consistent set of parts (e.g., boat), we provide the silhouette annotation. </p>
+    <p>Below are some example segmentation annotations from the dataset.</p>
+    <div> <span href="#" class="thumbnail"> <img src="pascal_part_annotation.png"> </span> </div>
+    <a name="download"></a>
+    <div class="page-header">
+    <h2 id="download">Download</h2>
+  </div>
+    <div class="well row">
+    <div class="col-md-6">
+        <h3 id="training-and-validation-set">
+        Training and Validation Set
+        </h2>
+        <p>The following download contains <em>only</em> the annotations for the training/validation set and some demo code.</p>
+        <p><a class="btn btn-primary btn-lg" href="trainval.tar.gz">trainval.tar.gz</a></p>
+        <ul>
+        <li>MD5: <code>2fa0a19ee9b5e43b2bee520166111120</code></li>
+	    </ul>
+        <p>Original images for the dataset can be downloaded from the <a href="http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2010/">PASCAL VOC 2010 website</a>.</p>
+      </div>
+    <div class="col-md-6">
+        <h3 id="testing-set">
+        Testing Set
+        </h2>
+        <p>Please download the images from the <a href="http://pascallin.ecs.soton.ac.uk/challenges/VOC/voc2010/">PASCAL VOC 2010 website</a>.</p>
+      </div>
+  </div>
+    <p><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> back to top</a></p>
+    <a name="statistics"></a>
+    <div class="page-header">
+    <h2 id="statistics">Statistics</h2>
+  </div>
+    <p>Since the dataset is an annotation of the PASCAL VOC 2010, it has the same statistics as those of the original dataset. Training and validation contains 10,103 images while testing contains 9,637 images.</p>
+    <p>Click on the panel below to see the list of annotated parts for each of the 20 PASCAL object classes.</p>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#class-list">Parts List</a>
+        </h4>
+      </div>
+      <div id="class-list" class="panel-collapse collapse out">
+        <div class="panel-body">
+          <table class="table table-condensed">
+            <tbody>
+            <tr>
+                <th>Objects</th>
+                <th>Parts</th>
+              </tr>
+            <tr>
+                <td><code>aeroplane</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>body</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>engine*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left wing</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right wing</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>stern</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>wheel*</code></td>
+              </tr>
+            <tr>
+                <td><code>bicycle</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>back wheel</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>chain wheel</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>front wheel</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>handlebar</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>headlight*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>saddle</code></td>
+              </tr>
+            <tr>
+                <td><code>bird</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>beak</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left foot</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left wing</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right foot</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right wing</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>boat</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td><code>bottle</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>body</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>cap</code></td>
+              </tr>
+            <tr>
+                <td><code>bus</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>back license plate</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>back side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>door*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>front license plate</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>front side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>headlight*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left mirror</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right mirror</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>roof side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>wheel*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>window*</code></td>
+              </tr>
+            <tr>
+                <td><code>car</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>back license plate</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>back side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>door*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>front license plate</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>front side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>headlight*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left mirror</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right mirror</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>roof side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>wheel*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>window*</code></td>
+              </tr>
+            <tr>
+                <td><code>cat</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>nose</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>chair</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td><code>cow</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left horn</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>muzzle</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right horn</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>diningtable</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td><code>dog</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>muzzle</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>nose</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front paw</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>horse</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back hoof</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front hoof</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>muzzle</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back hoof</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front hoof</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>motorbike</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>back wheel</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>front wheel</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>handlebar</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>headlight*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>saddle</code></td>
+              </tr>
+            <tr>
+                <td><code>person</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>hair</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eyebrow</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left foot</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left hand</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left lower arm</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left upper arm</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>mouth</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>nose</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eyebrow</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right foot</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right hand</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right lower arm</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right upper arm</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>pottedplant</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>plant</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>pot</code></td>
+              </tr>
+            <tr>
+                <td><code>sheep</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left back upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left front upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>left horn</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>muzzle</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>neck</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right back upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right ear</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right eye</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front lower leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right front upper leg</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>right horn</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>tail</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>torso</code></td>
+              </tr>
+            <tr>
+                <td><code>sofa</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td><code>train</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>coach back side*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>coach front side*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>coach left side*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>coach right side*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>coach roof side*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>coach*</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head back side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head front side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head left tside</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head right side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>head roof side</code></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>headlight*</code></td>
+              </tr>
+            <tr>
+                <td><code>tvmonitor</code></td>
+                <td></td>
+              </tr>
+            <tr>
+                <td></td>
+                <td><code>screen</code></td>
+              </tr>
+          </tbody>
+          </table>
+           <p>(* denotes a part can appear multiple times in one object instance)</p>
+        <a data-toggle="collapse" data-parent="#accordion" href="http://www.cs.stanford.edu/~roozbeh/pascal-context/#class-list">close class list</a> </div>
+      </div>
+  </div>
+    <p><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> back to top</a></p>
+    <a name="considerations"></a>
+    <div class="page-header">
+    <h2 id="usage-considerations">Usage Considerations</h2>
+  </div>
+    <p>We provide segmentation masks for detailed body parts. One can merge several parts to get appropriate object part granularity for different tasks. For instance, "eyes", "ears", "nose", etc. can be merged into a single "head" part.</p>
+    <p><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> back to top</a></p>
+    <a name="citation"></a>
+    <div class="page-header">
+    <h2 id="citation">Citation</h2>
+  </div>
+    <ul class="list-group">
+    <li class="list-group-item">
+        <div class="media">
+        <div class="pull-left text-center"> <a class="" href="http://www.stat.ucla.edu/~xianjie.chen/paper/Chen14cvpr.pdf">
+          <h2><span class="glyphicon glyphicon-file"></span></h2>
+          PDF</a><br>
+            <a class="pull-left text-center" href="http://www.stat.ucla.edu/~xianjie.chen/bibtex/Chen14cvpr.bib">
+          <h2><span class="glyphicon glyphicon-file"></span></h2>
+          Bibtex</a> </div>
+        <div class="media-body">
+            <h3>"Detect What You Can: Detecting and Representing Objects using Holistic Models and Body Parts"</h3>
+            <p><a href="http://www.stat.ucla.edu/~xianjie.chen"> Xianjie Chen</a>, <a href="http://www.cs.stanford.edu/~roozbeh"> Roozbeh Mottaghi</a>, <a href="http://www.stat.ucla.edu/~xiaobai.liu/">Xiaobai Liu</a>, <a href="http://www.cs.utoronto.ca/~fidler/"> Sanja Fidler</a>, <a href="http://www.cs.toronto.edu/~urtasun/">Raquel Urtasun</a>, <a href="http://www.stat.ucla.edu/~yuille/">Alan Yuille</a></p>
+            <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2014</a> 
+          </div>
+      </div>
+      </li>
+  </ul>
+    <p><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> back to top</a></p>
+    <a name="acknowledgements"></a>
+    <div class="page-header">
+    <h2 id="acknowledgements">Acknowledgements</h2>
+  </div>
+    <p>We thank Viet Nguyen for coordinating and leading the efforts for cleaning up the annotations. We would like to acknowledge the support by grants ARO 62250-CS and N00014-12-1-0883.</p>
+    <p><a href="#"><span class="glyphicon glyphicon-arrow-up"></span> back to top</a></p>
+  </div>
+</body>
+</html>
