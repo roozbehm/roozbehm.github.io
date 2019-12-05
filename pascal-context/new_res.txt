@@ -1,0 +1,38 @@
+IOU - O2P
+
+aeroplane   43.6
+bicycle     40.1
+bird        39.1
+boat        27.0
+bottle      26.3
+bus         55.8
+car         42.5
+cat         54.0
+chair       13.7
+cow         23.0
+table       10.5
+dog         39.8
+horse       38.7
+motorbike   51.5
+person      48.6
+pottedplant 26.8
+sheep       39.5
+sofa        21.4
+train       37.5
+tvmonitor   36.7
+sky         83.4
+grass       63.8
+ground      40.5
+road        48.1
+building    31.3
+tree        54.2
+water       64.9
+mountain    31.0
+wall        48.2
+floor       40.7
+track       32.2
+keyboard    46.7
+ceiling     24.8
+
+Average: 40.2
+
