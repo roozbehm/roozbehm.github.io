@@ -201,3 +201,7 @@ dd {
   grid-gap: 15px;
   align-items: center;
 }
+
+.mcbold{
+  font-weight:900 !important; 
+}
