@@ -77,16 +77,28 @@ header nav li {
 header nav a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
     padding: 8px 16px;
     border-radius: 6px;
     transition: all 0.2s;
+    border: 1px solid var(--border);
+    background: var(--bg-body);
 }
 
 header nav a:hover {
-    background: var(--bg-body);
     color: var(--primary);
+    background: var(--bg-card);
+    border-color: var(--primary);
+}
+
+.profile a {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.profile a:hover {
+    border: none;
+    background: none;
 }
 
 .profile {
@@ -745,9 +757,26 @@ a {
         margin-left: 0;
     }
 
-    footer h4 {
+footer h4 {
         font-size: 0.8rem;
     }
+}
+
+/* News page smaller font */
+.news-page {
+    font-size: 14px;
+}
+
+.news-page section {
+    font-size: 0.85rem;
+}
+
+.news-page dt {
+    font-size: 0.85rem;
+}
+
+.news-page dd {
+    font-size: 0.85rem;
 }
 
 /* Small mobile styles */
