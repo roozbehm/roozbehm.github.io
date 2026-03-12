@@ -216,6 +216,15 @@ h3 {
 
 .work-item a strong {
     font-size: 0.8rem;
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.3);
+    text-underline-offset: 2px;
+}
+
+.work-item a:hover strong {
+    color: var(--primary);
+    text-decoration-color: var(--primary);
 }
 
 .work-item p {
