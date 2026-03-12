@@ -436,34 +436,34 @@ footer h4 {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
     margin: 0;
 }
 
 .team-member {
     background: var(--bg-body);
-    padding: 10px;
+    padding: 8px;
     border-radius: 6px;
 }
 
 .team-member strong {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-bottom: 2px;
 }
 
 .team-member .role {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
 }
 
 .team-member .next {
     display: block;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-secondary);
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 .intern-list {
