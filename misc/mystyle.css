@@ -407,14 +407,18 @@ li.paper-with-image:last-child {
     line-height: 1.5;
 }
 
-.paper-with-image span a:first-child {
+li.paper-with-image span a:first-child {
     font-weight: 600;
     font-size: 0.9rem;
-    color: var(--text-primary);
+    color: #1e40af !important;
+    text-decoration: underline !important;
+    text-decoration-color: #1e40af !important;
+    text-underline-offset: 2px;
 }
 
-.paper-with-image span a:first-child:hover {
-    color: var(--primary);
+li.paper-with-image span a:first-child:hover {
+    color: #1e3a8a !important;
+    text-decoration-color: #1e3a8a !important;
 }
 
 .paper-with-image span b {
@@ -538,7 +542,7 @@ footer h4 {
 .update-date {
     font-size: 0.7rem;
     font-weight: 600;
-    color: var(--primary);
+    color: #1f2937 !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 2px;
