@@ -130,6 +130,12 @@ header nav a:hover {
     line-height: 1.5;
 }
 
+.profile .email {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
 .profile a img {
     width: 26px;
     height: 26px;
