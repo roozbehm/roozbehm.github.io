@@ -53,6 +53,11 @@ header h1 {
     margin: 0;
 }
 
+header h1 a {
+    color: #000000;
+    text-decoration: none;
+}
+
 .profile .email-icon {
     width: 18px;
     height: 18px;
@@ -729,8 +734,8 @@ a {
     }
 
     .profile .email-icon {
-        width: 14px;
-        height: 14px;
+        width: 12px !important;
+        height: 12px !important;
     }
 
     .update-item {
@@ -820,6 +825,11 @@ footer h4 {
     .profile > img {
         width: 120px;
         height: 120px;
+    }
+
+    .profile .email-icon {
+        width: 10px !important;
+        height: 10px !important;
     }
 
     .team-grid {
