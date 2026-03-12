@@ -750,13 +750,13 @@ a {
     }
 
     .paper-with-image {
-        grid-template-columns: 80px 1fr;
-        gap: 10px;
+        grid-template-columns: 100px 1fr;
+        gap: 12px;
         padding: 10px;
     }
 
     .paper-with-image img {
-        width: 80px;
+        width: 100px;
     }
 
     .paper-with-image span {
@@ -824,8 +824,12 @@ footer h4 {
     }
 
     .paper-with-image {
-        grid-template-columns: 60px 1fr;
-        gap: 8px;
+        grid-template-columns: 80px 1fr;
+        gap: 10px;
+    }
+
+    .paper-with-image img {
+        width: 80px;
     }
 
     .paper-with-image img {
