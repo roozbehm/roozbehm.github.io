@@ -53,13 +53,10 @@ header h1 {
     margin: 0;
 }
 
-header h1 a {
-    color: inherit;
-    text-decoration: none;
-}
-
-header h1 a:hover {
-    color: var(--primary);
+.profile .email-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
 }
 
 header nav ul {
